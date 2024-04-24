@@ -4,101 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator | What's your body mass index?</title>
+    <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="normalize.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <header>
-        <!-- Este ícono activa el tema oscuro -->
-        <a href=""><i class="bi bi-circle-half"></i></a>
-        <a href="https://github.com/alexmolinaws/"><i class="bi bi-github"></i></a>
+    <header class="header">
+        <div class="flex flex--center content-block">
+            <div class="header__logo">
+                <img src="media/bmic-logo.webp" alt="" width="100%">
+            </div>
+            <div class="header__links">
+                <a onclick="darkTheme()" class="inline"><i class="bi bi-circle-half"></i></a>
+                <a href="https://github.com/alexmolinaws/" class="inline"><i class="bi bi-github"></i></a>
+            </div>
+        </div>
     </header>
-    <main>
-        <section>
-            <!-- Este es el contenido inicial -->
-            <div>
-                <h1>BMI Free Calculator</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ipsa esse omnis porro perferendis provident voluptatibus voluptatum, nam, maiores consequatur deserunt ut sed reiciendis aperiam ex laboriosam voluptates voluptatem magnam?</p>
-            </div>
-            <div>
-                <h2>What is the body mass index?</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequuntur debitis, iusto placeat dicta ex quos similique corporis fugiat, iure officia possimus neque, veritatis perferendis esse ipsum reiciendis illum maiores! Deserunt ut sed reiciendis aperiam ex laboriosam voluptates voluptatem magnam?</p>
-                <button>Calculate</button>
-            </div>
-            <div>
-                <img src="" alt="">
+    <main class="page-content">
+        <section id="home" class="content-block content-block--sm content-card br-big">
+            <h1>BMI Free Calculator</h1>
+            <div class="flex flex--center">
+                <div class="txt-w-img">
+                    <h2>What is the body mass index?</h2>
+                    <p>This is a free BMI calculator app. Are you curious about your <strong>body mass index (BMI)</strong> and what it means for your health? This user-friendly app offers a quick and easy way to calculate this standarized measurement that helps to assess your body weight relative to your height. It provides a general indication of whether you're underweight, normal weight, overweight, or obese, which can be useful for understanding potential health risks associated with weight.</p>
+                    <button id="start-btn" class="button" onclick="getUserName()">Take Test</button>
+                </div>
+                <div class="img-area">
+                    <img src="https://place-hold.it/400x400/e8e8e8?text=Sample IMG" alt="" width="100%">
+                </div>
             </div>
         </section>
 
-        <section>
-            <!-- Este es el contenido de la calculadora -->
+        <section id="test-section" class="content-block content-block--sm content-card br-big">
             <h1>Calculate Your BMI</h1>
-            <div>
-                <h2>Tell us about you, (Name)</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis autem repellat ab consequatur non modi dolorem veritatis nam, voluptatem eos voluptates.</p>
+            <div class="flex flex--center">
+                <div class="txt-w-img">
+                    <h2>Tell us about you, <span id="user-name"></span></h2>
+                    <p>Our test is easy and quick: simply enter your information below. We don't collect any personal data.</p>
+    
+                    <label for="select-age" class="inline">Your age</label>
+                    <select name="age" id="select-age" class="selector br-sm inline">
+                        <option value="">Choose option</option>
+                        <option value="child">Under 12 (Child)</option>
+                        <option value="teenager">12 to 20 (Teen)</option>
+                        <option value="adult">21 to 40 (Adult)</option>
+                        <option value="mature">40 to 60 (Mature)</option>
+                        <option value="senior">60 to 80 (Senior)</option>
+                        <option value="elder">80 or above</option>
+                    </select>
+    
+                    <label for="select-sex" class="inline">Your sex</label>
+                    <select name="sex" id="select-sex" class="selector br-sm inline">
+                        <option value="">Choose option</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
 
-                <label for="age-select">Your age</label>
-                <select name="age" id="age-select">
-                    <option value="" disabled>Choose an option</option>
-                    <option value="child">Under 12 (Child)</option>
-                    <option value="teenager">12 to 20 (Teen)</option>
-                    <option value="adult">21 to 40 (Adult)</option>
-                    <option value="mature">40 to 60 (Mature)</option>
-                    <option value="senior">60 to 80 (Senior)</option>
-                    <option value="elder">80 or above</option>
-                </select>
-
-                <label for="sex-select">Biological sex</label>
-                <select name="sex" id="sex-select">
-                    <option value="" disabled>Choose an option</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <!-- Este es el formulario para el cálculo -->
+                    <p>Your result is calculated by dividing your weight in kilograms by the square of your height in meters.</p>
+                    <form action="">
+                        <fieldset class="form borderless">
+                            <input name="height" type="text" placeholder="Your weight (Kg)" required class="form__field inline br-sm">
+                            <input name="weight" type="text" placeholder="Your height (Mts)" required class="form__field inline br-sm">
+                            <button class="button inline">Calculate It</button>
+                        </fieldset>
+                </div>
+    
+                <div class="img-area">
+                    <!-- Esta es la imagen interactiva -->
+                    <img src="https://place-hold.it/400x400/e8e8e8?text=Avatar Here" alt="" width="100%">
+                </div>
             </div>
-
-            <div>
-                <!-- Este es el avatar interactivo -->
-                <img src="" alt="">
-            </div>
-
-            <div>
-                <!-- Mensaje del promedio ideal -->
-            </div>
-
-            <form action="">
-                <!-- Formulario para el cálculo -->
-                <fieldset>
-                    <input type="text" placeholder="Your height" required>
-                    <input type="text" placeholder="Your weight" required>
-                    <input type="button" value="Calculate">
-                </fieldset>
         </section>
 
-        <section>
-            <!-- Este es el contenido de los resultados -->
+        <section id="result-section" class="content-block content-block--sm content-card br-big">
             <h1>Your BMI Results</h1>
-            <h2>Your level is (Level)</h2>
-            <!-- Acá debe ir el gráfico -->
-            <p>Your result: <span id=""></span> | Ideal for you: <span id=""></span></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, iusto vel, tempore incidunt sed ea labore quisquam cumque unde omnis doloribus ad libero commodi iure, exercitationem aliquam quam. Quidem ipsa esse omnis porro perferendis provident voluptatibus voluptatum</p>
+            <h2>Your level is <span id="level"></span></h2>
+            <p>This test is designed for informational purposes only, and should not substitute professional medical advice.</p>
+            <progress id="level-bar" max="100" value="20"></progress>
+            <p>Your result: <span id="result-value"></span> | Ideal for you: <span id="ideal-value"></span></p>
+            <p><strong>Note:</strong> we'll never collect any personal data, including usage statistics.</p>
             <div>
-                <button>Restart</button>
-                <a href="https://en.wikipedia.org/wiki/Body_mass_index"><button>Read More</button></a>
+                <button class="button inline">Take Again</button>
+                <a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank"><button class="button button--alt inline">Read More</button></a>
             </div>
         </section>
     </main>
-    <footer>
-        <div>
-            <!-- Acá nuevamente el logo -->
-            <img src="" alt="" srcset="">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi asperiores, repellendus nemo ipsum veritatis, cumque illum delectus nihil corporis recusandae sequi omnis.</p>
-        </div>
-        <div>
-            <p>Lorem ipsum &copy; dolor sit amet consectetur adipisicing elit.</p>
-        </div>
+    <footer class="footer">
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">BMI Calculator by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/alexmolinaws">Alex Molina</a>. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p> 
     </footer>
+
     <script src="app.js"></script>
 </body>
 </html>

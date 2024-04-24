@@ -1,0 +1,208 @@
+:root {
+    --main-color: #36d39c;
+    --main-color-hover: #06efB9;
+    --accent-color: #ff6680;
+    --accent-color-hover: #f9a1b1;
+    --background-color: #FCFCFC;
+    --secondary-color: #aeb7b4;
+    --dark-color: #7e8b89;
+    --text-color: #000009;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    color: var(--text-color);
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 1.3rem;
+    }
+    h1, h2, h3 {
+        font-family: "Oswald";
+        }
+        h1, h2 {
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2.7rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        h3, h4 {
+            text-transform: uppercase;
+        }
+    h4, h5, h6, p, i, a {
+        font-family: "Barlow";
+        }
+        h4, h5, h6 {
+            font-weight: 600;
+        }
+        p {
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+        a {
+            color: var(--text-color);
+        }
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    }
+    .flex--center {
+        align-items: center;
+    }
+
+.borderless {
+    border: none;
+}
+
+.content-block {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-bottom: 2rem;
+    margin-right: auto;
+    }
+    .content-block--sm {
+        width: 85%;
+        max-width: 1100px;
+    }
+
+.content-card {
+    padding: 3rem 3.5rem;
+    background-color: white;
+    box-shadow: 0 6px 10px rgba(126, 139, 137, .25);
+}
+
+.br-sm {
+    border-radius: .5rem;
+}
+
+.br-big {
+    border-radius: 1.5rem;
+}
+
+.link {
+    color: var(--accent-color);
+    }
+    .link:hover {
+        color: var(--accent-color-hover);
+    }
+
+.button {
+    padding: .5rem 1rem;
+    border: 2px solid var(--accent-color);
+    color: white;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    }
+    .button--alt {
+        color: var(--accent-color);
+        background: none;
+    }
+    .button:hover {
+        color: white;
+        background-color: var(--accent-color-hover);
+        border-color: var(--accent-color-hover);
+        transition: 400ms;
+    }
+    .button--alt:hover {
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+    }
+
+.form {
+    padding: 0;
+    }
+    .form__field {
+        padding: .5rem;
+        border: 1px solid var(--dark-color);
+    }
+
+.selector {
+    width: 165px;
+    padding: .5rem .8rem;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--background-color);
+}
+
+.inline:not(:last-child) {
+    margin-right: .6rem;
+}
+
+progress {
+    width: 100%;
+    height: 1.5rem;
+    border-radius: 8px; 
+    }
+    progress::-webkit-progress-bar {
+        border-radius: 8px;
+        background-color: var(--main-color);
+    }
+    progress::-webkit-progress-value {
+        border-radius: 8px;
+        background-color: var(--main-color);
+    }
+    progress::-moz-progress-bar {
+        background-color: var(--main-color);
+    }
+
+.header {
+    height: 65px;
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--main-color);
+    margin-bottom: 1.8rem;
+    background-color: white;
+    }
+    .header__logo {
+        width: 10%;
+    }
+    .header__links {
+        width: 12%;
+        text-align: end;
+        }
+        .header__links a {
+            font-size: 1.6rem;
+            color: var(--main-color);
+        }
+        .header__links a:hover {
+            color: var(--main-color-hover);
+        }
+
+.txt-w-img {
+    width: 70%;
+}
+
+.img-area {
+    width: 24%;
+}
+
+.footer {
+    height: 30px;
+    padding-top: .45rem;
+    margin: 0;
+    text-align: center;
+    background-color: var(--main-color);
+    }
+    .footer p, a {
+        color: white;
+    }
+    .footer p {
+        margin: 0;
+    }
+    .footer a {
+        font-weight: bold;
+        text-decoration: none;
+    }
