@@ -16,7 +16,7 @@
     <header class="header">
         <div class="flex flex--center content-block">
             <div class="header__logo">
-                <img src="media/bmic-logo.webp" alt="" width="100%">
+                <img src="media/bmic-logo.webp" alt="fitness bmi logo transparent" width="100%">
             </div>
             <div class="header__links">
                 <a onclick="darkTheme()" class="inline"><i class="bi bi-circle-half"></i></a>
@@ -27,28 +27,28 @@
     <main class="page-content">
         <section id="home" class="content-block content-block--sm content-card br-big">
             <h1>BMI Free Calculator</h1>
-            <div class="flex flex--center">
+            <div class="flex flex--center flex--col">
                 <div class="txt-w-img">
-                    <h2>What is the body mass index?</h2>
-                    <p>This is a free BMI calculator app. Are you curious about your <strong>body mass index (BMI)</strong> and what it means for your health? This user-friendly app offers a quick and easy way to calculate this standarized measurement that helps to assess your body weight relative to your height. It provides a general indication of whether you're underweight, normal weight, overweight, or obese, which can be useful for understanding potential health risks associated with weight.</p>
-                    <button id="start-btn" class="button" onclick="getUserName()">Take Test</button>
+                    <h2 class="mob-txt-center">What is body mass index?</h2>
+                    <p class="mob-hidden">Are you curious about your <strong>body mass index (BMI)</strong> and what it means for your health? Our test offers a quick and easy way to calculate this standart measurement that helps to assess your body weight by providing a general indication of whether you're underweight, normal weight, overweight, or obese, which can be useful for understanding potential health risks associated with weight.</p>
+                    <p class="mob-only">Are you curious about your <strong>body mass index (BMI)</strong> and what it means? Our test offers a quick and easy way to calculate this standart measurement that helps to assess your body weight by providing a general indication of whether you're underweight, normal weight, overweight, or obese, useful for understanding potential health risks.</p>
+                    <button id="start-btn" class="button mob-block mob-el-center" onclick="getUserName()">Take Test</button>
                 </div>
                 <div class="img-area">
-                    <img src="https://place-hold.it/400x400/e8e8e8?text=Sample IMG" alt="" width="100%">
+                    <img src="media/slimming-photo.webp" alt="free weight slimming person stock photo" width="100%" class="image">
                 </div>
             </div>
         </section>
 
         <section id="test-section" class="content-block content-block--sm content-card br-big">
             <h1>Calculate Your BMI</h1>
-            <div class="flex flex--center">
+            <div class="flex flex--center flex--col">
                 <div class="txt-w-img">
-                    <h2>Tell us about you, <span id="user-name"></span></h2>
+                    <h2 class="mob-txt-center">Tell us about you, <span id="user-name"></span></h2>
                     <p>Our test is easy and quick: simply enter your information below. We don't collect any personal data.</p>
-    
-                    <label for="select-age" class="inline">Your age</label>
-                    <select name="age" id="select-age" class="selector br-sm inline">
-                        <option value="">Choose option</option>
+                    <label for="select-age" class="inline mob-hidden">Your age</label>
+                    <select name="age" id="select-age" class="selector br-sm inline mob-hidden">
+                        <option value="" selected>Choose option</option>
                         <option value="child">Under 12 (Child)</option>
                         <option value="teenager">12 to 20 (Teen)</option>
                         <option value="adult">21 to 40 (Adult)</option>
@@ -56,47 +56,63 @@
                         <option value="senior">60 to 80 (Senior)</option>
                         <option value="elder">80 or above</option>
                     </select>
-    
-                    <label for="select-sex" class="inline">Your sex</label>
-                    <select name="sex" id="select-sex" class="selector br-sm inline">
-                        <option value="">Choose option</option>
+                    <label for="select-sex" class="inline mob-hidden">Your sex</label>
+                    <select name="sex" id="select-sex" class="selector br-sm inline mob-hidden">
+                        <option value="" selected>Choose option</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
 
+                    <div class="mob-block mob-el-center mob-only">
+                        <label for="select-age" class="inline">Your age</label>
+                        <select name="age" id="select-age" class="selector br-sm inline">
+                            <option value="" selected>Choose option</option>
+                            <option value="child">Under 12 (Child)</option>
+                            <option value="teenager">12 to 20 (Teen)</option>
+                            <option value="adult">21 to 40 (Adult)</option>
+                            <option value="mature">40 to 60 (Mature)</option>
+                            <option value="senior">60 to 80 (Senior)</option>
+                            <option value="elder">80 or above</option>
+                        </select>
+                    </div>
+                    <div class="mob-block mob-el-center mob-only">   
+                        <label for="select-sex" class="inline">Your sex</label>
+                        <select name="sex" id="select-sex" class="selector br-sm inline">
+                            <option value="" selected>Choose option</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
                     <p>Your result is calculated by dividing your weight in kilograms by the square of your height in meters.</p>
                     <form action="">
                         <fieldset class="form borderless">
-                            <input name="height" type="text" placeholder="Your weight (Kg)" required class="form__field inline br-sm">
-                            <input name="weight" type="text" placeholder="Your height (Mts)" required class="form__field inline br-sm">
-                            <button class="button inline">Calculate It</button>
+                            <input name="height" type="text" placeholder="Your weight (Kg)" class="form__field inline br-sm mob-block mob-el-center">
+                            <input name="weight" type="text" placeholder="Your height (Mts)" class="form__field inline br-sm mob-block mob-el-center">
+                            <button class="button inline mob-block mob-el-center">Calculate It</button>
                         </fieldset>
                 </div>
-    
                 <div class="img-area">
-                    <!-- Esta es la imagen interactiva -->
-                    <img src="https://place-hold.it/400x400/e8e8e8?text=Avatar Here" alt="" width="100%">
+                    <img src="media/avatar-empty.webp" alt="interactive 3D avatar AI illustration" width="100%" class="image">
                 </div>
             </div>
         </section>
 
         <section id="result-section" class="content-block content-block--sm content-card br-big">
             <h1>Your BMI Results</h1>
-            <h2>Your level is <span id="level"></span></h2>
-            <p>This test is designed for informational purposes only, and should not substitute professional medical advice.</p>
+            <h2 class="mob-txt-center">Your level is <span id="level"></span></h2>
+            <p>This test is designed for informational purposes and should not substitute professional medical advice.</p>
             <progress id="level-bar" max="100" value="20"></progress>
             <p>Your result: <span id="result-value"></span> | Ideal for you: <span id="ideal-value"></span></p>
             <p><strong>Note:</strong> we'll never collect any personal data, including usage statistics.</p>
             <div>
-                <button class="button inline">Take Again</button>
+                <a href="#"><button class="button inline">Take Again</button></a>
                 <a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank"><button class="button button--alt inline">Read More</button></a>
             </div>
         </section>
     </main>
     <footer class="footer">
-        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">BMI Calculator by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/alexmolinaws">Alex Molina</a>. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p> 
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">BMI Calculator by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/alexmolinaws">Alex Molina</a>. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="creative commons"><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="personal use"><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="attribution"></a></p> 
     </footer>
-
     <script src="app.js"></script>
 </body>
 </html>
