@@ -27,7 +27,7 @@
     <main class="page-content">
         <section id="home" class="content-block content-block--sm content-card br-big">
             <h1>BMI Free Calculator</h1>
-            <div class="flex flex--center flex--col">
+            <div class="flex flex--center mob-col">
                 <div class="txt-w-img">
                     <h2 class="mob-txt-center">What is body mass index?</h2>
                     <p class="mob-hidden">Are you curious about your <strong>body mass index (BMI)</strong> and what it means for your health? Our test offers a quick and easy way to calculate this standart measurement that helps to assess your body weight by providing a general indication of whether you're underweight, normal weight, overweight, or obese, which can be useful for understanding potential health risks associated with weight.</p>
@@ -39,29 +39,13 @@
                 </div>
             </div>
         </section>
-
         <section id="test-section" class="hidden content-block content-block--sm content-card br-big">
             <h1>Calculate Your BMI</h1>
-            <div class="flex flex--center flex--col">
+            <div class="flex flex--center mob-col">
                 <div class="txt-w-img">
                     <h2 class="mob-txt-center">Tell us about you, <span id="user-name"></span></h2>
                     <p>Our test is easy and quick: simply enter your information below. We don't collect any personal data.</p>
-                    <label for="select-age" class="inline mob-hidden">Your age</label>
-                    <select id="select-age" name="age" class="selector br-sm inline mob-hidden">
-                        <option value="empty" selected>Choose option</option>
-                        <option value="toddler">0 to 5 (Toddler)</option>
-                        <option value="child">6 to 11 (Child)</option>
-                        <option value="teenager">12 to 18 (Teen)</option>
-                        <option value="adult">Over 18 (Adult)</option>
-                    </select>
-                    <label for="select-sex" class="inline mob-hidden">Your sex</label>
-                    <select id="select-sex" name="sex" class="selector br-sm inline mob-hidden">
-                        <option value="empty" selected>Choose option</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-
-                    <div class="mob-block mob-el-center mob-only">
+                    <div class="dt-inline mob-el-center">
                         <label for="select-age" class="inline">Your age</label>
                         <select id="select-age" name="age" class="selector br-sm inline">
                             <option value="empty" selected>Choose option</option>
@@ -71,7 +55,7 @@
                             <option value="adult">Over 18 (Adult)</option>
                         </select>
                     </div>
-                    <div class="mob-block mob-el-center mob-only">   
+                    <div class="dt-inline mob-el-center">   
                         <label for="select-sex" class="inline">Your sex</label>
                         <select id="select-sex" name="sex" class="selector br-sm inline">
                             <option value="empty" selected>Choose option</option>
@@ -94,11 +78,10 @@
             </div>
             <p id="error-txt" class="message"></p>
         </section>
-
         <section id="result-section" class="hidden content-block content-block--sm content-card br-big">
             <h1>Your BMI Results</h1>
             <h2 class="mob-txt-center">Your level is: <span id="level"></span></h2>
-            <p>This test is designed for informational purposes and should not substitute professional medical advice.</p>
+            <p>This test is designed for informational purposes and should not substitute medical advice.</p>
             <progress id="level-bar" max="100" value="20"></progress>
             <p>Your result: <strong id="result-value"></strong>. Ideal for you: <strong id="ideal-value"></strong></p>
             <p><strong>Note:</strong> we don't collect any personal data, including usage statistics.</p>
@@ -107,7 +90,6 @@
                 <a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank"><button class="button button--alt inline">Read More</button></a>
             </div>
         </section>
-
         <p class="content-block message"><strong>Disclaimer:</strong> this BMI calculator provides quick estimates based on the user's height and weight, but it's not designed to be a self-diagnostic tool but to be used for informational and educational purposes only. It shouldn't replace professional or medical advice. The creator doesn't collect any data nor provides any medical consultancy services.</p>
     </main>
     <footer class="footer">

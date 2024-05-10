@@ -296,7 +296,7 @@ progress {
         padding-bottom: 64px;
     }
 
-    .flex--col {
+    .mob-col {
         flex-direction: column;
     }
 
@@ -355,6 +355,11 @@ progress {
     .mob-only {
         display: none;
         visibility: hidden;
+    }
+
+    .dt-inline {
+        display: inline;
+        margin-right: 1rem;
     }
 }
 

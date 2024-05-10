@@ -1,6 +1,5 @@
-// Dark mode interactivity
+// Dark mode toggling
 let root = document.documentElement;
-let other = document.querySelectorAll('.inline'); 
 let toggle = document.getElementById('toggle-theme');
 
 toggle.addEventListener('click', function(elements) {
@@ -13,8 +12,8 @@ toggle.addEventListener('click', function(elements) {
     }
 });
 
-// One-way paging interactivity
-function nextCard(section) {
+// One-way paging switch
+function nextCard() {
     let mainCard, testCard, chartCard;
     mainCard = document.getElementById('home');
     testCard = document.getElementById('test-section');
@@ -61,8 +60,6 @@ userSex.addEventListener('change', function() {
 
 let field = document.getElementsByTagName('input');
 let userAge = document.getElementById('select-age');
-let userWeight = document.getElementById('weight');
-let userHeight = document.getElementById('height');
 let calcButton = document.getElementById("calculate");
 
 // Sets form validation
@@ -86,7 +83,9 @@ userSex.addEventListener('change', checkForm);
 field[0].addEventListener('input', checkForm);
 field[1].addEventListener('input', checkForm);
 
-// Main features of the app
+// Sets the calculator
+let userWeight = document.getElementById('weight');
+let userHeight = document.getElementById('height');
 let calcResult;
 
 function calcBMI() {
@@ -96,11 +95,6 @@ function calcBMI() {
     calcResult = weight / (height ** 2);
     return;
 };
-
-let levelBar = document.getElementById("level-bar");
-let userLevel = document.getElementById("level");
-let userResult = document.getElementById('result-value');
-let idealResult = document.getElementById('ideal-value');
 
 const childRange = {
     healthy: 13.8,
@@ -116,44 +110,59 @@ const raisedRange = {
     obesity: 30,
 };
 
+let levelBar = document.getElementById("level-bar");
+let userLevel = document.getElementById("level");
+let userResult = document.getElementById('result-value');
+let idealResult = document.getElementById('ideal-value');
+
 function display() {
-    let lvlName = {
-        bad: "Underweight",
-        good: "Healthy",
-        mid: "Risky",
-        high: "Overweight",
-        max: "Obesity",
+    let levelData = {
+        low: {
+            name: "Underweight",
+            value: 20,
+        },
+        good: {
+            name: "Healthy",
+            value: 45,
+        },
+        mid: {
+            name: "Risky",
+            value: 60,
+        },
+        high: {
+            name: "Overweight",
+            value: 75,
+        },
+        danger: {
+            name: "Obesity",
+            value: 93,
+        },
     };
-    let lvlValue = {
-        bad: 20,
-        good: 40,
-        mid: 60,
-        high: 75,
-        max: 93,
-    };
-    // Stablish the reference range object based on age
+
+    // Sets the reference range object based on age
     let reference = (userAge.value == "toddler") ? childRange : (userAge.value == "child") ? childRange : raisedRange;
 
-    // Comparar y mostrar resultados
+    // Compares and displays result
     if (calcResult < reference.healthy) {
-        userLevel.innerHTML = lvlName.bad;
-        levelBar.value = lvlValue.bad;
+        userLevel.innerHTML = levelData.low.name;
+        levelBar.value = levelData.low.value;
     } else if (calcResult < reference.risky) {
-        userLevel.innerHTML = lvlName.good;
-        levelBar.value = lvlValue.good;
+        userLevel.innerHTML = levelData.good.name;
+        levelBar.value = levelData.good.value;
     } else if (calcResult < reference.overweight) {
-        userLevel.innerHTML = lvlName.mid;
-        levelBar.value = lvlValue.mid;
+        userLevel.innerHTML = levelData.mid.name;
+        levelBar.value = levelData.mid.value;
     } else if (calcResult < reference.obesity) {
-        userLevel.innerHTML = lvlName.high;
-        levelBar.value = lvlValue.high;
+        userLevel.innerHTML = levelData.high.name;
+        levelBar.value = levelData.high.value;
     } else {
-        userLevel.innerHTML = lvlName.max;
-        levelBar.value = lvlValue.max;
+        userLevel.innerHTML = levelData.danger.name;
+        levelBar.value = levelData.danger.value;
     }
+
     idealResult.innerHTML = reference.healthy + " (minimum)";
     userResult.innerHTML = calcResult.toFixed(2);
-}
+};
 
 calcButton.addEventListener('click', function() {
     checkForm();
