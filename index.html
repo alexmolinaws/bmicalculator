@@ -19,8 +19,8 @@
                 <img src="media/bmic-logo.webp" alt="fitness bmi logo transparent" width="100%">
             </div>
             <div class="header__links">
-                <a onclick="darkTheme()" class="inline"><i class="bi bi-circle-half"></i></a>
-                <a href="https://github.com/alexmolinaws/" class="inline"><i class="bi bi-github"></i></a>
+                <a id="toggle-theme" class="inline"><i class="bi bi-circle-half"></i></a>
+                <a href="https://github.com/alexmolinaws/bmicalculator" target="_blank" class="inline"><i class="bi bi-github"></i></a>
             </div>
         </div>
     </header>
@@ -32,7 +32,7 @@
                     <h2 class="mob-txt-center">What is body mass index?</h2>
                     <p class="mob-hidden">Are you curious about your <strong>body mass index (BMI)</strong> and what it means for your health? Our test offers a quick and easy way to calculate this standart measurement that helps to assess your body weight by providing a general indication of whether you're underweight, normal weight, overweight, or obese, which can be useful for understanding potential health risks associated with weight.</p>
                     <p class="mob-only">Are you curious about your <strong>body mass index (BMI)</strong> and what it means? Our test offers a quick and easy way to calculate this standart measurement that helps to assess your body weight by providing a general indication of whether you're underweight, normal weight, overweight, or obese, useful for understanding potential health risks.</p>
-                    <button id="start-btn" class="button mob-block mob-el-center" onclick="getUserName()">Take Test</button>
+                    <a href="#test-section"><button id="start-btn" class="button mob-block mob-el-center" onclick="startApp()">Take Test</button></a>
                 </div>
                 <div class="img-area">
                     <img src="media/slimming-photo.webp" alt="free weight slimming person stock photo" width="100%" class="image">
@@ -40,75 +40,75 @@
             </div>
         </section>
 
-        <section id="test-section" class="content-block content-block--sm content-card br-big">
+        <section id="test-section" class="hidden content-block content-block--sm content-card br-big">
             <h1>Calculate Your BMI</h1>
             <div class="flex flex--center flex--col">
                 <div class="txt-w-img">
                     <h2 class="mob-txt-center">Tell us about you, <span id="user-name"></span></h2>
                     <p>Our test is easy and quick: simply enter your information below. We don't collect any personal data.</p>
                     <label for="select-age" class="inline mob-hidden">Your age</label>
-                    <select name="age" id="select-age" class="selector br-sm inline mob-hidden">
-                        <option value="" selected>Choose option</option>
-                        <option value="child">Under 12 (Child)</option>
-                        <option value="teenager">12 to 20 (Teen)</option>
-                        <option value="adult">21 to 40 (Adult)</option>
-                        <option value="mature">40 to 60 (Mature)</option>
-                        <option value="senior">60 to 80 (Senior)</option>
-                        <option value="elder">80 or above</option>
+                    <select id="select-age" name="age" class="selector br-sm inline mob-hidden">
+                        <option value="empty" selected>Choose option</option>
+                        <option value="toddler">0 to 5 (Toddler)</option>
+                        <option value="child">6 to 11 (Child)</option>
+                        <option value="teenager">12 to 18 (Teen)</option>
+                        <option value="adult">Over 18 (Adult)</option>
                     </select>
                     <label for="select-sex" class="inline mob-hidden">Your sex</label>
-                    <select name="sex" id="select-sex" class="selector br-sm inline mob-hidden">
-                        <option value="" selected>Choose option</option>
+                    <select id="select-sex" name="sex" class="selector br-sm inline mob-hidden">
+                        <option value="empty" selected>Choose option</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
 
                     <div class="mob-block mob-el-center mob-only">
                         <label for="select-age" class="inline">Your age</label>
-                        <select name="age" id="select-age" class="selector br-sm inline">
-                            <option value="" selected>Choose option</option>
-                            <option value="child">Under 12 (Child)</option>
-                            <option value="teenager">12 to 20 (Teen)</option>
-                            <option value="adult">21 to 40 (Adult)</option>
-                            <option value="mature">40 to 60 (Mature)</option>
-                            <option value="senior">60 to 80 (Senior)</option>
-                            <option value="elder">80 or above</option>
+                        <select id="select-age" name="age" class="selector br-sm inline">
+                            <option value="empty" selected>Choose option</option>
+                            <option value="toddler">0 to 5 (Toddler)</option>
+                            <option value="child">6 to 11 (Child)</option>
+                            <option value="teenager">12 to 18 (Teen)</option>
+                            <option value="adult">Over 18 (Adult)</option>
                         </select>
                     </div>
                     <div class="mob-block mob-el-center mob-only">   
                         <label for="select-sex" class="inline">Your sex</label>
-                        <select name="sex" id="select-sex" class="selector br-sm inline">
-                            <option value="" selected>Choose option</option>
+                        <select id="select-sex" name="sex" class="selector br-sm inline">
+                            <option value="empty" selected>Choose option</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
                     </div>
-                    <p>Your result is calculated by dividing your weight in kilograms by the square of your height in meters.</p>
+                    <p>Your result will be calculated by dividing your weight in kilograms by the square of your height.</p>
                     <form action="">
                         <fieldset class="form borderless">
-                            <input name="height" type="text" placeholder="Your weight (Kg)" class="form__field inline br-sm mob-block mob-el-center">
-                            <input name="weight" type="text" placeholder="Your height (Mts)" class="form__field inline br-sm mob-block mob-el-center">
-                            <button class="button inline mob-block mob-el-center">Calculate It</button>
+                            <input id="weight" name="weight" type="number" placeholder="Weight in Kg" required class="form__field inline br-sm mob-block mob-el-center">
+                            <input id="height" name="height" type="number" placeholder="Height in cm" required class="form__field inline br-sm mob-block mob-el-center">
+                            <input id="calculate" type="button" value="Calculate" class="button inline mob-block mob-el-center">
                         </fieldset>
+                    </form>
                 </div>
                 <div class="img-area">
-                    <img src="media/avatar-empty.webp" alt="interactive 3D avatar AI illustration" width="100%" class="image">
+                    <img src="media/avatar-empty.webp" alt="interactive 3D avatar AI illustration" width="100%" id="avatar" class="image">
                 </div>
             </div>
+            <p id="error-txt" class="message"></p>
         </section>
 
-        <section id="result-section" class="content-block content-block--sm content-card br-big">
+        <section id="result-section" class="hidden content-block content-block--sm content-card br-big">
             <h1>Your BMI Results</h1>
-            <h2 class="mob-txt-center">Your level is <span id="level"></span></h2>
+            <h2 class="mob-txt-center">Your level is: <span id="level"></span></h2>
             <p>This test is designed for informational purposes and should not substitute professional medical advice.</p>
             <progress id="level-bar" max="100" value="20"></progress>
-            <p>Your result: <span id="result-value"></span> | Ideal for you: <span id="ideal-value"></span></p>
-            <p><strong>Note:</strong> we'll never collect any personal data, including usage statistics.</p>
+            <p>Your result: <strong id="result-value"></strong>. Ideal for you: <strong id="ideal-value"></strong></p>
+            <p><strong>Note:</strong> we don't collect any personal data, including usage statistics.</p>
             <div>
-                <a href="#"><button class="button inline">Take Again</button></a>
+                <a href=""><button onclick="window.location.reload(true)" class="button inline">Take Again</button></a>
                 <a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank"><button class="button button--alt inline">Read More</button></a>
             </div>
         </section>
+
+        <p class="content-block message"><strong>Disclaimer:</strong> this BMI calculator provides quick estimates based on the user's height and weight, but it's not designed to be a self-diagnostic tool but to be used for informational and educational purposes only. It shouldn't replace professional or medical advice. The creator doesn't collect any data nor provides any medical consultancy services.</p>
     </main>
     <footer class="footer">
         <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">BMI Calculator by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/alexmolinaws">Alex Molina</a>. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="creative commons"><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="personal use"><img style="height:20px!important;margin-left:4px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="attribution"></a></p> 

@@ -1,20 +1,31 @@
 :root {
     --main-color: #36d39c;
-    --main-color-hover: #06efB9;
+    --main-color-hover: #06efb9;
     --accent-color: #ff6680;
     --accent-color-hover: #f9a1b1;
-    --background-color: #FCFCFC;
     --secondary-color: #aeb7b4;
-    --dark-color: #7e8b89;
+    --alt-color: #7e8b89;
+    --background-color: #fcfcfc;
+    --background-color-mate: #fff;
     --text-color: #000009;
 }
 
+.dark-mode {
+    --secondary-color: #d4d6d5;
+    --background-color: #4a5452;
+    --background-color-mate: #303030;
+    --text-color: white;
+}
+
 body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 34px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background-color);
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1, h2, h3, h4, h5, h6, p, span, label, select {
     color: var(--text-color);
     }
     h1, h2, h3, h4, h5, h6 {
@@ -52,8 +63,13 @@ h1, h2, h3, h4, h5, h6, p, span {
             margin-bottom: 1.5rem;
         }
         a {
-            color: var(--text-color);
+            text-decoration: none;
         }
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
 
 .flex {
     display: flex;
@@ -82,7 +98,7 @@ h1, h2, h3, h4, h5, h6, p, span {
 
 .content-card {
     padding: 3rem 3.5rem;
-    background-color: white;
+    background-color: var(--background-color-mate);
     box-shadow: 0 6px 10px rgba(126, 139, 137, .25);
 }
 
@@ -102,9 +118,9 @@ h1, h2, h3, h4, h5, h6, p, span {
     }
 
 .button {
-    padding: .5rem 1rem;
+    padding: .3rem 1rem .5rem;
     border: 2px solid var(--accent-color);
-    color: white;
+    color: var(--background-color-mate);
     background-color: var(--accent-color);
     border-radius: 8px;
     }
@@ -113,7 +129,7 @@ h1, h2, h3, h4, h5, h6, p, span {
         background: none;
     }
     .button:hover {
-        color: white;
+        color: var(--background-color-mate);
         background-color: var(--accent-color-hover);
         border-color: var(--accent-color-hover);
         transition: 400ms;
@@ -122,13 +138,22 @@ h1, h2, h3, h4, h5, h6, p, span {
         background-color: var(--accent-color);
         border-color: var(--accent-color);
     }
+    .button--dis, .button--dis:hover {
+        color: white;
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+    }
+    
+input:last-child {
+    padding-top: .5rem;
+}
 
 .form {
     padding: 0;
     }
     .form__field {
         padding: .5rem;
-        border: 1px solid var(--dark-color);
+        border: 1px solid var(--alt-color);
     }
 
 .selector {
@@ -164,7 +189,7 @@ progress {
     padding-top: 1rem;
     border-bottom: 1px solid var(--main-color);
     margin-bottom: 1.8rem;
-    background-color: white;
+    background-color: var(--background-color-mate);
     }
     .header__logo {
         width: 10%;
@@ -194,15 +219,27 @@ progress {
     border-radius: .6rem;
 }
 
+.message {
+    font-size: .9rem;
+    color: var(--secondary-color);
+}
+
+#error-txt {
+    margin: 0;
+    font-weight: 500;
+}
+
 .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 30px;
     padding-top: .45rem;
-    margin: 0;
     text-align: center;
     background-color: var(--main-color);
     }
     .footer p, a {
-        color: white;
+        color: var(--background-color-mate);
     }
     .footer p {
         margin: 0;
@@ -255,6 +292,10 @@ progress {
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        padding-bottom: 64px;
+    }
+
     .flex--col {
         flex-direction: column;
     }
@@ -318,7 +359,6 @@ progress {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {
-
     .content-block--sm {
         width: 85%;
         max-width: 920px;
