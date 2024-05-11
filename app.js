@@ -67,10 +67,10 @@ let errorText = document.getElementById("error-txt");
 let isValid = false;
 
 function checkForm() {
-    if (userAge.value == 'empty' || userSex.value == 'empty' || field[0].value == 0 || field[1].value == 0) {
+    if (userAge.value == 'empty' || userSex.value == 'empty' || field[0].value < 2 || field[1].value < 2) {
         calcButton.classList.add('button--dis');
         errorText.classList.remove("hidden");
-        errorText.innerHTML = "Please be sure to fill the form above. Don't worry, we won't collect any data you provide.";
+        errorText.innerHTML = "Please be sure to fill this form. Height must be in centimeters. Don't worry, we won't collect any data.";
     } else {
         calcButton.classList.remove('button--dis');
         errorText.classList.add("hidden");
@@ -160,7 +160,7 @@ function display() {
         levelBar.value = levelData.danger.value;
     }
 
-    idealResult.innerHTML = reference.healthy + " (minimum)";
+    idealResult.innerHTML = reference.healthy + " ~ " + reference.risky;
     userResult.innerHTML = calcResult.toFixed(2);
 };
 
