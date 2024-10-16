@@ -33,38 +33,38 @@ h1, h2, h3, h4, h5, h6, p, span, label, select {
         margin-bottom: 1.3rem;
     }
     h1, h2, h3 {
-        font-family: "Oswald";
-        }
-        h1, h2 {
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 2.5rem;
-            text-align: center;
-        }
-        h2 {
-            font-size: 1.9rem;
-        }
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-        h3, h4 {
-            text-transform: uppercase;
-        }
+    font-family: "Oswald";
+    }
+    h1, h2 {
+        font-weight: 700;
+    }
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    h2 {
+        font-size: 1.9rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    h3, h4 {
+        text-transform: uppercase;
+    }
     h4, h5, h6, p, i, a {
-        font-family: "Barlow";
-        }
-        h4, h5, h6 {
-            font-weight: 600;
-        }
-        p {
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-        a {
-            text-decoration: none;
-        }
+    font-family: "Barlow";
+    }
+    h4, h5, h6 {
+        font-weight: 600;
+    }
+    p {
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+    a {
+        text-decoration: none;
+    }
 
 .hidden {
     display: none;
@@ -390,13 +390,13 @@ progress {
     .header {
         height: 70px;
         padding-top: .85rem;
-        }
-        .header__logo {
-            width: 20%;
-        }
-        .header__links {
-            width: 20%;
-        }
+    }
+    .header__logo {
+        width: 20%;
+    }
+    .header__links {
+        width: 20%;
+    }
 
     .txt-w-img {
         width: 65%;
