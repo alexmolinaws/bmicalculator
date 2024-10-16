@@ -87,10 +87,9 @@ function getUserName() {
 
 // Performs a one-way pagination
 function nextCard() {
-    const mainCard, testCard, chartCard;
-    mainCard = document.getElementById('home');
-    testCard = document.getElementById('test-section');
-    chartCard = document.getElementById('result-section');
+    const mainCard = document.getElementById('home');
+    const testCard = document.getElementById('test-section');
+    const chartCard = document.getElementById('result-section');
     const cards = [mainCard, testCard, chartCard];
 
     if (cards[1].classList.contains('hidden')) {
