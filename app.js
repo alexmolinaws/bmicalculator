@@ -106,7 +106,7 @@ function checkForm() {
     if (userAge.value == 'empty' || userSex.value == 'empty' || field[0].value < 2 || field[1].value < 2) {
         calcButton.classList.add('button--dis');
         errorText.classList.remove("hidden");
-        errorText.innerHTML = 'Please be sure to fill this form. Height must be in centimeters. Don't worry, we won't collect any data.';
+        errorText.innerHTML = "Please be sure to fill this form. Height must be in centimeters. Don't worry, we won't collect any data.";
     } else {
         calcButton.classList.remove('button--dis');
         errorText.classList.add('hidden');
